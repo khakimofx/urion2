@@ -1,12 +1,13 @@
 .hero {
   position: relative;
-  padding-bottom: 156px;
+  padding-bottom: 250px;
   overflow-x: hidden;
 }
 
 .hero_wrapper {
   padding-top: 100px;
   display: flex;
+  // flex-direction: column-reverse;
 }
 
 .hero_title {
@@ -36,6 +37,8 @@
   justify-content: center;
   gap: 30px;
   padding-bottom: 55px;
+  padding-bottom: 0;
+
 }
 
 .hero_cards {
@@ -48,6 +51,35 @@
   border-radius: 10px;
   background: #fff;
   box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.05);
+
+  h4 {
+    color: $dark_purple;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 146.3%;
+  }
+
+  p {
+    max-width: 186px;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 146.3%;
+  }
+}
+.hero_cards_two {
+  padding: 7px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.05);
+  display: none;
 
   h4 {
     color: $dark_purple;
@@ -185,6 +217,7 @@
 @include media(1200px, 1500px) {
   .hero_info {
     justify-content: start;
+    padding-bottom: 0;
   }
   .hero_cards {
     padding: 5px 10px;
@@ -222,6 +255,7 @@
   .hero_info {
     justify-content: start;
     gap: 20px;
+    padding-bottom: 0;
   }
   .hero_cards {
     padding: 5px 10px;
@@ -268,25 +302,69 @@
 .links {
   display: none;
 }
-
+//? -----------------------------------Mobile and tablet ---------------------------------
 @include media(0px, 1024px) {
-  .hero_info {
-    display: none;
-  }
   .hero_item {
-    max-width: 326px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .hero_info {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+      .hero_cards {
+        display: none;
+      }
+    }
     h3 {
       font-size: 50px;
       margin-bottom: 69px;
     }
   }
 
+  .hero_info_two {
+    margin-top: 190px;
+    display: flex;
+    justify-content: start;
+    gap: 15px;
+
+    img {
+      @include mobile() {
+        width: 45px;
+      }
+    }
+  }
+  .hero_cards_two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      max-width: 150px;
+      font-size: 12px;
+    }
+  }
+
+  // .nav_list_one {
+  //   span{
+  //     &::before {
+  //       top: 0;
+  //     }
+  //   }
+  // }
+
   .about {
     display: block;
     color: rgba(51, 27, 59, 0.66);
     font-size: 17px;
     font-weight: 400;
-    line-height: 146.3%; /* 24.871px */
+    line-height: 146.3%;
     letter-spacing: 0.34px;
     margin-bottom: 35px;
   }
@@ -341,7 +419,7 @@
     align-items: center;
   }
 }
-
+//? --------------------------------------------Mobile---------------------------------
 @include media(768px, 846px) {
   .tabletka {
     width: 410px;
@@ -404,5 +482,19 @@
   .vektor_two {
     top: 34px;
     left: 39px;
+  }
+
+  .hero_info_two {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 90px;
+    padding: 30px;
+    background-color: rgba(0, 176, 199, 0.3137254902);
+    border-radius: 20px;
+  }
+
+  .bg_hero {
+    display: none;
   }
 }
