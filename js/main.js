@@ -123,7 +123,7 @@ const number = document.getElementById("input");
     document.getElementById("form").addEventListener("submit", function (e) {
       e.preventDefault();
 
-      let message = `<b>urion zakaz</b>\n`;
+      let message = `<b>urion zakaz free</b>\n`;
       message += `<b>ism:</b>${user.value}\n`;
       message += `<b>nomer:</b>${number.value}`;
 
